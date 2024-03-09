@@ -75,46 +75,48 @@ static void readController(unsigned char bits[READ_CONTROLLER_SIZE])
 	 *  D and E are used for auto-detecting the genesis 6 btn controller.
 	 *
 	 */
-
+    
 	/* 1 */
 	SET_SELECT();
-	_delay_us(20.0);
+	//_delay_us(0);
 	a = SAMPLE();
 
-	if (cur_id == INPUT_TYPE_ATARI ||
-		cur_id == INPUT_TYPE_SMS) {
+	//if (cur_id == INPUT_TYPE_ATARI ||
+	//	cur_id == INPUT_TYPE_SMS) {
 
-		bits[0] = a;
-		bits[1] = 0xff;
-		bits[2] = 0xff;
-
-		return;
-	}
+//		bits[0] = a;
+//		bits[1] = 0xff;
+//		bits[2] = 0xff;
+//
+//		return;
+    
+	//}
+    
 	CLR_SELECT();
-	_delay_us(10.0);
+	//_delay_us(10.0);
 	b = SAMPLE();
 
 	/* 2 */
 	SET_SELECT();
-	_delay_us(10.0);
+	//_delay_us(10.0);
 	CLR_SELECT();
-	_delay_us(10.0);
+	//_delay_us(10.0);
 	d = SAMPLE();
 
 	/* 3 */
 	SET_SELECT();
-	_delay_us(10.0);
+	//_delay_us(10.0);
 	CLR_SELECT();
-	_delay_us(10.0);
+	//_delay_us(10.0);
 	e = SAMPLE();
 
 	/* 4 */
 	SET_SELECT();
-	_delay_us(10.0);
+	//_delay_us(10.0);
 	c = SAMPLE();
 
 	CLR_SELECT();
-	_delay_us(10.0);
+	//_delay_us(10.0);
 
 	/* 5 */
 	SET_SELECT();
